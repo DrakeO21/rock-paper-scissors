@@ -1,7 +1,7 @@
 <!DOCTYPE html lang=en>
 <html>
     <head>
-        <meta charset= "UTF-8">
+        <meta charset="UTF-8">
         <title>Rock Paper Scissors</title>
     </head>
     <body>
@@ -9,10 +9,22 @@
 
         // randomly chooses an option for the computer 
         function getComputerChoice() {
-            const choices = ['rock', 'paper', 'scissors'];
-            const randomIndex = Math.floor(Math.random() * choices.length); 
-            return choices[randomIndex];
+            const choices = ['rock', 'paper', 'scissors']; // set variables in array for computer 
+            const randomIndex = Math.floor(Math.random() * choices.length); // create random index 
+            return choices[randomIndex]; // return the random index of choices 
         }
+
+        
+        function getHumanChoice() {
+            while (true) { // keeps loop going until valid response is input
+            let answer = prompt("Let's play Rock, Paper, Scissors! Please choose one of the following.").toLowerCase(); //case-insensitive prompt to user
+            if (answer === "rock" || answer === "paper" || answer === "scissors") { // conditional to allow use to only input the given options
+                return answer;
+            } else {
+                alert('Invalid choice! Please choose either "rock", "paper", or "scissors".');
+        }
+     }
+ }
 
         
         
