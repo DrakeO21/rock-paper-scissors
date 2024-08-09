@@ -1,5 +1,3 @@
-let humanChoice;
-let computerChoice;
 let humanScore = 0;
 let computerScore = 0;
 const buttons = document.querySelectorAll("button");
@@ -18,19 +16,21 @@ const resetBtn = document.querySelector("#resetButton");
         }
     }
 
-    function getHumanChoice() {
         buttons.forEach((button) => {
             button.addEventListener('click', () => {
                 if(humanScore < 5 && computerScore < 5){
-                    humanChoice = button.id;
-                    computerChoice = getComputerChoice();
-                    playRound(humanChoice, computerChoice);
+                    const choices = button.getAttribute("id");
+                    playRound(choices);
                 }
             });
         });
-    }
 
-    function playRound(humanChoice, computerChoice) { // use two parameters (humchoice and comchoice) as arguments for conditionals 
+    function playRound(choices) {
+        const humanChoice = choices;
+        const computerChoice = getComputerChoice();
+        if (humanScore < 5 && computerScore < 5){
+
+        }
         let message;
         if (humanChoice === computerChoice) {
             message = "You tie! Try Again!"
@@ -64,17 +64,16 @@ const resetBtn = document.querySelector("#resetButton");
             resultDisplay.textContent = "Sorry! You lost!"
         }
         resetBtn.classList.remove('hide');
-        buttons.forEach(button => button.disabled = true);
+        buttons.forEach(button => button.disabled = false);
     }
 
-    function resetGame(){
+    function resetGame() {
         humanScore = 0;
         computerScore = 0;
         updateScore();
+        resultDisplay.textContent = "Choose your fate";
         resetBtn.classList.add('hide');
         buttons.forEach(button => button.disabled = false);
     }
 
-    resetBtn.addEventListener('click', getHumanChoice());
-
-    getHumanChoice();
+    resetBtn.addEventListener('click', resetGame);

@@ -1,0 +1,45 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100px;
+}
+.intro {
+    display: flex;
+    justify-content: center;
+    height: 25px;
+
+}
+.container {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 400px;
+    padding-right: 400px;
+    padding-bottom: 20px;
+}
+
+.reset-button{
+    display: flex;
+    height: 30px;
+    width: 100px;
+    margin-top: 50px;
+    margin-left:auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.results{
+    height: 150px;
+    width: 50%;
+    border: solid black;
+    margin-left: auto;
+    margin-right: auto;
+}
+.score {
+    display: flex;
+    justify-content: center;
+}
+.hide{
+    display: none;
+}
